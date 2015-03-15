@@ -7,7 +7,7 @@
 
 /**
  * Implements hook_theme().
- *
+ */
 function hive_theme($existing, $type, $theme, $path) {
   return array(
     // Register the newly added theme_form_content() hook so we can utilize
@@ -21,7 +21,7 @@ function hive_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-*/
+
 /**
  * Implements hook_commons_utility_links_alter().
  */
@@ -1055,7 +1055,7 @@ function hive_fieldset($variables) {
 /**
  * Process an address to add microformat structure and remove &nbsp;
  * characters.
- */
+ *
 function _commons_origins_format_address(&$address) {
   $address['#theme_wrappers'][] = 'container';
   $address['#attributes']['class'][] = 'adr';
@@ -1083,6 +1083,7 @@ function _commons_origins_format_address(&$address) {
     $address['country']['#attributes']['class'][] = 'country-name';
   }
 }
+*/
 
 /**
  * Implements hook_preprocess_field().
