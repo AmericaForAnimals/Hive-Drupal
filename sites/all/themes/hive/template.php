@@ -7,8 +7,8 @@
 
 /**
  * Implements hook_theme().
- */
-function commons_origins_theme($existing, $type, $theme, $path) {
+ *
+function hive_theme($existing, $type, $theme, $path) {
   return array(
     // Register the newly added theme_form_content() hook so we can utilize
     // theme hook suggestions.
@@ -21,11 +21,11 @@ function commons_origins_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-
+*/
 /**
  * Implements hook_commons_utility_links_alter().
  */
-function commons_origins_commons_utility_links_alter(&$element) {
+function hive_commons_utility_links_alter(&$element) {
   // Add wrappers to title elements in notification links so that they can be
   // replaced with an icon.
   $iconify = array(
@@ -52,7 +52,7 @@ function commons_origins_commons_utility_links_alter(&$element) {
 /**
  * Implements hook_preprocess_media_oembed().
  */
-function commons_origins_preprocess_media_oembed(&$variables) {
+function hive_preprocess_media_oembed(&$variables) {
   $content = $variables['content'];
   $type = $variables['type'];
 
@@ -66,7 +66,7 @@ function commons_origins_preprocess_media_oembed(&$variables) {
 /**
  * Implements hook_preprocess_search_result().
  */
-function commons_origins_preprocess_search_result(&$variables, $hook) {
+function hive_preprocess_search_result(&$variables, $hook) {
   $variables['title_attributes_array']['class'][] = 'title';
   $variables['title_attributes_array']['class'][] = 'search-result-title';
   $variables['content_attributes_array']['class'][] = 'search-result-content';
@@ -79,7 +79,7 @@ function commons_origins_preprocess_search_result(&$variables, $hook) {
  * tpl files simpler and make maintaining it a bit less worrisome since there
  * are 2 forms of search supported.
  */
-function commons_origins_preprocess_search_results(&$variables, $hook) {
+function hive_preprocess_search_results(&$variables, $hook) {
   $variables['classes_array'][] = 'search-results-wrapper';
   $variables['title_attributes_array']['class'][] = 'search-results-title';
   $variables['content_attributes_array']['class'][] = 'search-results-content';
@@ -89,7 +89,7 @@ function commons_origins_preprocess_search_results(&$variables, $hook) {
 /**
  * Implements hook_process_search_results().
  */
-function commons_origins_process_search_results(&$variables, $hook) {
+function hive_process_search_results(&$variables, $hook) {
   // Set the title in preprocess so that it can be overridden by modules
   // further upstream.
   if (empty($variables['title'])) {
@@ -100,7 +100,7 @@ function commons_origins_process_search_results(&$variables, $hook) {
 /**
  * Shows a groups of blocks for starting a search from a filter.
  */
-function commons_origins_apachesolr_search_browse_blocks($vars) {
+function hive_apachesolr_search_browse_blocks($vars) {
   $result = '';
   if ($vars['content']['#children']) {
     $result .= '<div class="apachesolr-browse-blocks">' . "\n";
@@ -118,7 +118,7 @@ function commons_origins_apachesolr_search_browse_blocks($vars) {
 /**
  * Preprocess variables for the html template.
  */
-function commons_origins_preprocess_html(&$variables, $hook) {
+function hive_preprocess_html(&$variables, $hook) {
   global $theme_key;
 
   $site_name = variable_get('site_name', 'Commons');
@@ -142,7 +142,7 @@ function commons_origins_preprocess_html(&$variables, $hook) {
 /**
  * Implements hook_privatemsg_view_alter().
  */
-function commons_origins_privatemsg_view_alter(&$elements) {
+function hive_privatemsg_view_alter(&$elements) {
   // Wrap the message view and reply form in a commons pod.
   $elements['#theme_wrappers'][] = 'container';
   $elements['#attributes']['class'][] = 'privatemsg-conversation';
@@ -167,7 +167,7 @@ function commons_origins_privatemsg_view_alter(&$elements) {
 /**
  * Implements hook_privatemsg_message_view_alter().
  */
-function commons_origins_privatemsg_message_view_alter(&$elements) {
+function hive_privatemsg_message_view_alter(&$elements) {
   if (isset($elements['message_actions'])) {
     // Move the message links into a different variable and make it a renderable
     // array. Privatemsg has the links hardcoded, so this is the only way to
@@ -186,7 +186,7 @@ function commons_origins_privatemsg_message_view_alter(&$elements) {
 /**
  * Implements hook_preprocess_privatemsg_view().
  */
-function commons_origins_preprocess_privatemsg_view(&$variables, $hook) {
+function hive_preprocess_privatemsg_view(&$variables, $hook) {
   // Make the template conform with Drupal standard attributes.
   if (isset($variables['message_classes'])) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $variables['message_classes']);
@@ -210,7 +210,7 @@ function commons_origins_preprocess_privatemsg_view(&$variables, $hook) {
 /**
  * Implements theme_menu_link().
  */
-function commons_origins_menu_link($variables) {
+function hive_menu_link($variables) {
   $output = '';
   $path_to_at_core = drupal_get_path('theme', 'adaptivetheme');
 
@@ -252,7 +252,7 @@ function commons_origins_menu_link($variables) {
 /**
  * Helper function to examine menu links and return the appropriate class.
  */
-function commons_origins_menu_link_class(&$element)  {
+function hive_menu_link_class(&$element)  {
   if ($element['#original_link']['menu_name'] == 'main-menu') {
     $element['#attributes']['class'][] = drupal_html_class($element['#original_link']['menu_name'] . '-' . $element['#original_link']['router_path']);
   }
@@ -261,7 +261,7 @@ function commons_origins_menu_link_class(&$element)  {
 /**
  * Override or insert variables for the page templates.
  */
-function commons_origins_preprocess_page(&$variables, $hook) {
+function hive_preprocess_page(&$variables, $hook) {
   if (module_exists('page_manager')) {
     $p = page_manager_get_current_page();
     if (isset($p['name']) && $p['name'] == 'node_view') {
@@ -286,7 +286,7 @@ function commons_origins_preprocess_page(&$variables, $hook) {
 /**
  * Override or insert variables into the node templates.
  */
-function commons_origins_preprocess_node(&$variables, $hook) {
+function hive_preprocess_node(&$variables, $hook) {
   $node = $variables['node'];
 
   // Some content does not get a user image on the full node.
@@ -436,7 +436,7 @@ function commons_origins_preprocess_node(&$variables, $hook) {
 /**
  * Implements hook_preprocess_comment_wrapper().
  */
-function commons_origins_preprocess_comment_wrapper(&$variables, $hook) {
+function hive_preprocess_comment_wrapper(&$variables, $hook) {
   // Change things around to use the attribute arrays for the titles.
   $variables['title_attributes_array']['class'][] = 'comments-title';
   $variables['form_title_attributes_array'] = array(
@@ -447,7 +447,7 @@ function commons_origins_preprocess_comment_wrapper(&$variables, $hook) {
 /**
  * Implements hook_process_comment_wrapper().
  */
-function commons_origins_process_comment_wrapper(&$variables, $hook) {
+function hive_process_comment_wrapper(&$variables, $hook) {
   // Make sure the form_title_attributes_array is rendered into a single string.
   $variables['form_title_attributes'] = drupal_attributes($variables['form_title_attributes_array']);
 }
@@ -455,7 +455,7 @@ function commons_origins_process_comment_wrapper(&$variables, $hook) {
 /**
  * Implements hook_preprocess_comment().
  */
-function commons_origins_preprocess_comment(&$variables, $hook) {
+function hive_preprocess_comment(&$variables, $hook) {
   $variables['content']['links']['#attributes']['class'][] = 'comment-links';
 
   // Push the reporting link to the end.
@@ -468,7 +468,7 @@ function commons_origins_preprocess_comment(&$variables, $hook) {
 /**
  * Implements hook_preprocess_flag().
  */
-function commons_origins_preprocess_flag(&$variables, $hook) {
+function hive_preprocess_flag(&$variables, $hook) {
   if (strpos($variables['flag_name_css'], 'inappropriate-') !== 0) {
     // Style the flag links like buttons.
     if ($variables['last_action'] == 'flagged') {
@@ -484,7 +484,7 @@ function commons_origins_preprocess_flag(&$variables, $hook) {
 /**
  * Implements hook_preprocess_two_33_66().
  */
-function commons_origins_preprocess_two_33_66(&$variables, $hook) {
+function hive_preprocess_two_33_66(&$variables, $hook) {
   $menu = menu_get_item();
 
   // Suggest a variant for the search page so the facets will be wrapped in pod
@@ -494,7 +494,7 @@ function commons_origins_preprocess_two_33_66(&$variables, $hook) {
   }
 }
 
-function commons_origins_preprocess_three_25_50_25(&$variables, $hook) {
+function hive_preprocess_three_25_50_25(&$variables, $hook) {
   $menu = menu_get_item();
 
   // Suggest a variant for the search page so the facets will be wrapped in pod
@@ -507,7 +507,7 @@ function commons_origins_preprocess_three_25_50_25(&$variables, $hook) {
 /**
  * Implements hook_preprocess_panelizer_view_mode().
  */
-function commons_origins_preprocess_panelizer_view_mode(&$variables, $hook) {
+function hive_preprocess_panelizer_view_mode(&$variables, $hook) {
   // Add classed to identity the entity type being overridden.
   $variables['classes_array'][] = drupal_html_class('panelizer-' . $variables['element']['#entity_type']);
   $variables['title_attributes_array']['class'][] = drupal_html_class($variables['element']['#entity_type'] . '-title');
@@ -521,7 +521,7 @@ function commons_origins_preprocess_panelizer_view_mode(&$variables, $hook) {
 /**
  * Implements hook_preprocess_panels_pane().
  */
-function commons_origins_preprocess_panels_pane(&$variables, $hook) {
+function hive_preprocess_panels_pane(&$variables, $hook) {
   $pane = $variables['pane'];
 
   // Add pod styling to some of the panels panes.
@@ -562,7 +562,7 @@ function commons_origins_preprocess_panels_pane(&$variables, $hook) {
 /**
  * Overrides theme_panels_default_style_render_region();
  */
-function commons_origins_panels_default_style_render_region($variables) {
+function hive_panels_default_style_render_region($variables) {
   $output = '';
   // Remove the empty panels-separator div.
   $output .= implode("\n", $variables['panes']);
@@ -572,7 +572,7 @@ function commons_origins_panels_default_style_render_region($variables) {
 /**
  * Implements hook_preprocess_views_view().
  */
-function commons_origins_preprocess_views_view(&$variables, $hook) {
+function hive_preprocess_views_view(&$variables, $hook) {
   $view = $variables['view'];
 
   // Wrap page views in pod styling.
@@ -596,7 +596,7 @@ function commons_origins_preprocess_views_view(&$variables, $hook) {
 /**
  * Implements hook_preprocess_views_view_unformatted().
  */
-function commons_origins_preprocess_views_view_unformatted(&$variables, $hook) {
+function hive_preprocess_views_view_unformatted(&$variables, $hook) {
   $view = $variables['view'];
 
   // Prevent the avatars in the activity stream blocks from bleeding into the
@@ -622,7 +622,7 @@ function commons_origins_preprocess_views_view_unformatted(&$variables, $hook) {
 /**
  * Implements hook_preprocess_pager().
  */
-function commons_origins_preprocess_pager_link (&$variables, $hook) {
+function hive_preprocess_pager_link (&$variables, $hook) {
   // Style pager links like buttons.
   $variables['attributes']['class'][] = 'action-item';
   $variables['attributes']['class'][] = 'action-item-inline';
@@ -634,7 +634,7 @@ function commons_origins_preprocess_pager_link (&$variables, $hook) {
  * Since Commons Origins overrides the default theme_form() function, we will
  * need to perform some processing on attributes to make it work in a template.
  */
-function commons_origins_preprocess_form(&$variables, $hook) {
+function hive_preprocess_form(&$variables, $hook) {
   // Bootstrap the with some of Drupal's default variables.
   template_preprocess($variables, $hook);
 
@@ -707,7 +707,7 @@ function commons_origins_preprocess_form(&$variables, $hook) {
  * Since Commons Origins overrides the default theme_form() function, we will
  * need to perform some processing on attributes to make it work in a template.
  */
-function commons_origins_process_form(&$variables, $hook) {
+function hive_process_form(&$variables, $hook) {
   // Crunch down attribute arrays.
   template_process($variables, $hook);
 }
@@ -715,7 +715,7 @@ function commons_origins_process_form(&$variables, $hook) {
 /**
  * Implements hook_preprocess_form_content().
  */
-function commons_origins_preprocess_form_content(&$variables, $hook) {
+function hive_preprocess_form_content(&$variables, $hook) {
   // Bootstrap the with some of Drupal's default variables.
   template_preprocess($variables, $hook);
 
@@ -783,7 +783,7 @@ function commons_origins_preprocess_form_content(&$variables, $hook) {
 /**
  * Implements hook_process_form_content().
  */
-function commons_origins_process_form_content(&$variables, $hook) {
+function hive_process_form_content(&$variables, $hook) {
   // Crunch down attribute arrays.
   template_process($variables, $hook);
 }
@@ -791,7 +791,7 @@ function commons_origins_process_form_content(&$variables, $hook) {
 /**
  * Implements hook_preprocess_rate_template_commons_like().
  */
-function commons_origins_preprocess_rate_template_commons_like(&$variables, $hook) {
+function hive_preprocess_rate_template_commons_like(&$variables, $hook) {
   // Roll the content into a renderable array to make the template simpler.
   $variables['content'] = array(
     'link' => array(
@@ -818,7 +818,7 @@ function commons_origins_preprocess_rate_template_commons_like(&$variables, $hoo
 /**
  * Overrides hook_rate_button() for commons_like.
  */
-function commons_origins_rate_button__commons_like($variables) {
+function hive_rate_button__commons_like($variables) {
   $text = $variables['text'];
   $href = $variables['href'];
   $class = $variables['class'];
@@ -845,7 +845,7 @@ function commons_origins_rate_button__commons_like($variables) {
 /**
  * Implements hook_form_alter().
  */
-function commons_origins_form_alter(&$form, &$form_state, $form_id) {
+function hive_form_alter(&$form, &$form_state, $form_id) {
   // Give forms a common theme function so we do not have to declare every
   // single form we want to override in hook_theme().
   if (is_array($form['#theme'])) {
@@ -916,7 +916,7 @@ function commons_origins_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_views_bulk_operations_form_Alter().
  */
-function commons_origins_views_bulk_operations_form_alter(&$form, $form_state, $vbo) {
+function hive_views_bulk_operations_form_alter(&$form, $form_state, $vbo) {
   // change the buttons' fieldset wrapper to a div and push it to the bottom of
   // the form.
   $form['select']['#type'] = 'container';
@@ -926,7 +926,7 @@ function commons_origins_views_bulk_operations_form_alter(&$form, $form_state, $
 /**
  * Implements hook_css_alter().
  */
-function commons_origins_css_alter(&$css) {
+function hive_css_alter(&$css) {
   // Remove preset styles that interfere with theming.
   $unset = array(
     drupal_get_path('module', 'search') . '/search.css',
@@ -947,7 +947,7 @@ function commons_origins_css_alter(&$css) {
  * This allows for the theme to set a link's #access argument to FALSE so it
  * will not render.
  */
-function commons_origins_links($variables) {
+function hive_links($variables) {
   $links = $variables['links'];
   $attributes = $variables['attributes'];
   $heading = $variables['heading'];
@@ -1029,7 +1029,7 @@ function commons_origins_links($variables) {
  *
  * Add another div wrapper around fieldsets for styling purposes.
  */
-function commons_origins_fieldset($variables) {
+function hive_fieldset($variables) {
   $element = $variables['element'];
   element_set_attributes($element, array('id'));
   _form_set_class($element, array('form-wrapper'));
@@ -1087,7 +1087,7 @@ function _commons_origins_format_address(&$address) {
 /**
  * Implements hook_preprocess_field().
  */
-function commons_origins_preprocess_field(&$variables, $hook) {
+function hive_preprocess_field(&$variables, $hook) {
   // Style the trusted contact link like a button.
   if (isset($variables['element']['#formatter']) && $variables['element']['#formatter'] == 'trusted_contact') {
     foreach ($variables['items'] as &$container) {
@@ -1110,7 +1110,7 @@ function commons_origins_preprocess_field(&$variables, $hook) {
 /**
  * Override theme_html_tag__request_pending().
  */
-function commons_origins_html_tag__request_pending($variables) {
+function hive_html_tag__request_pending($variables) {
   $element = $variables['element'];
   $element['#attributes']['class'][] = 'action-item-small-active';
   $element['#attributes']['class'][] = 'trusted-status-pending';
@@ -1138,7 +1138,7 @@ function commons_origins_html_tag__request_pending($variables) {
  *
  * This will apply button styling to the links for leaving and joining a group.
  */
-function commons_origins_field__group_group__group($variables) {
+function hive_field__group_group__group($variables) {
   $output = '';
 
   // Render the label, if it's not hidden.
@@ -1172,7 +1172,7 @@ function commons_origins_field__group_group__group($variables) {
 /**
  * Overrides theme_field__addressfield().
  */
-function commons_origins_field__addressfield($variables) {
+function hive_field__addressfield($variables) {
   $output = '';
 
   // Add Microformat classes to each address.
@@ -1210,7 +1210,7 @@ function commons_origins_field__addressfield($variables) {
 /**
  * Implements hook_preprocess_views_view_field().
  */
-function commons_origins_preprocess_views_view_field(&$variables, $hook) {
+function hive_preprocess_views_view_field(&$variables, $hook) {
   // Make sure empty addresses are not displayed.
   // Views does not use theme_field__addressfield(), so we need to process
   // these implementations separately.
@@ -1234,7 +1234,7 @@ function commons_origins_preprocess_views_view_field(&$variables, $hook) {
 /**
  * Implements hook_preprocess_user_profile().
  */
-function commons_origins_preprocess_user_profile(&$variables, $hook) {
+function hive_preprocess_user_profile(&$variables, $hook) {
   if (in_array('user_profile__search_results', $variables['theme_hook_suggestions'])) {
     // Give the profile a distinctive class to target and wrap the display in
     // pod styling.
@@ -1277,7 +1277,7 @@ function commons_origins_preprocess_user_profile(&$variables, $hook) {
 /**
  * Implements hook_preprocess_commons_search_solr_user_results().
  */
-function commons_origins_preprocess_commons_search_solr_user_results(&$variables, $hook) {
+function hive_preprocess_commons_search_solr_user_results(&$variables, $hook) {
   // Hide the results title.
   $variables['title_attributes_array']['class'][] = 'element-invisible';
 }
@@ -1285,7 +1285,7 @@ function commons_origins_preprocess_commons_search_solr_user_results(&$variables
 /**
  * Implements hook_process_node().
  */
-function commons_origins_process_node(&$variables, $hook) {
+function hive_process_node(&$variables, $hook) {
   $node = $variables['node'];
   $wrapper = entity_metadata_wrapper('node', $node);
 
