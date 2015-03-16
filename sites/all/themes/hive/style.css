@@ -1,3 +1,14 @@
 .boxshadow .palette-magenta-blue .header-color-row-one {
 	background-color: yellow;
 }
+
+.palette-magenta-blue .header-color-row-two {
+  background-color: ;
+}
+
+@media only screen and (min-width: 768px) {
+  body.front.not-logged-in #content {
+    background: url('../images/flypug.jpg?1400510663') right top no-repeat;
+  }
+}
+
