@@ -66,7 +66,7 @@
 body.front.not-logged-in #block-system-main .pane-1 .pane-title,
 body.front .pane-custom.pane-1 {
   color: white;
-  text-shadow: text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 #logo {
@@ -84,4 +84,16 @@ body.front .pane-custom.pane-1 {
 
 .header-color-row-two {
   min-height: 0.5em;
+}
+
+.palette-magenta-blue .action-item-primary, .palette-magenta-blue .action-item-small-primary, .palette-magenta-blue .action-item-large-primary, .palette-magenta-blue .commons-sign-up, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.commons-login:hover {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login, .button:link, button:link, [type="reset"]:link, [type="submit"]:link, [type="button"]:link, [class*="action-item"]:link, .commons-login:link, .button:visited, button:visited, [type="reset"]:visited, [type="submit"]:visited, [type="button"]:visited, [class*="action-item"]:visited, .commons-login:visited {
+  color: white;
 }
