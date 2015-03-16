@@ -18,11 +18,41 @@
   border: 0 none;
 }
 
+.palette-magenta-blue #menu-bar.nav,
 .palette-magenta-blue #menu-bar.nav ul.menu li a, #menu-bar.nav ul.menu li .palette-magenta-blue a {
   border: 0 none;
+  box-shadow: none;
 }
 
 #branding #site-title {
   display: none;
 }
+
+.palette-magenta-blue .action-item-primary:hover, .palette-magenta-blue .action-item-small-primary:hover, .palette-magenta-blue .action-item-large-primary:hover, .palette-magenta-blue .commons-sign-up:hover, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a:hover, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a:hover, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a:hover, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a:hover {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+@media only screen {
+  .button:hover, button:hover, [type="reset"]:hover, [type="submit"]:hover, [type="button"]:hover, [class*="action-item"]:hover, .commons-login:hover {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+  }
+}
+
+#main-content-header #page-title {
+  color: white;
+}
+
+body.front.not-logged-in #block-system-main .pane-1 .pane-title,
+body.front .pane-custom.pane-1 {
+  color: white;
+  text-shadow: -1px 1px 2px #006f8c, -1px -1px 2px #006f8c, 1px -1px 2px #006f8c, 1px 1px 2px #006f8c;
+}
+
+
 
