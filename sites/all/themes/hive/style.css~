@@ -50,7 +50,7 @@
 		background: transparent;
 		color: white;
 		font-weight: bold;
-		text-shadow: text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+		text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
   }
     .button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login {
 		border: 3px solid white;
@@ -92,7 +92,7 @@ body.front .pane-custom.pane-1 {
 }
 
 .commons-login:hover {
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
 }
 
 .button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login, .button:link, button:link, [type="reset"]:link, [type="submit"]:link, [type="button"]:link, [class*="action-item"]:link, .commons-login:link, .button:visited, button:visited, [type="reset"]:visited, [type="submit"]:visited, [type="button"]:visited, [class*="action-item"]:visited, .commons-login:visited {
