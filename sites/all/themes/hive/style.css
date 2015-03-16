@@ -35,8 +35,22 @@
   font-weight: bold;
 }
 
+.palette-magenta-blue .action-item-primary, .palette-magenta-blue .action-item-small-primary, .palette-magenta-blue .action-item-large-primary, .palette-magenta-blue .commons-sign-up, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+
 @media only screen {
   .button:hover, button:hover, [type="reset"]:hover, [type="submit"]:hover, [type="button"]:hover, [class*="action-item"]:hover, .commons-login:hover {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+  }
+    .button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login {
 		border: 3px solid white;
 		background: transparent;
 		color: white;
