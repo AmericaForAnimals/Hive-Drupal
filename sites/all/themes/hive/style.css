@@ -9,12 +9,20 @@
 }
 
 @media only screen and (min-width: 768px) {
-  body.front.not-logged-in #page {
-    background: url('images/flypug.jpg?1400510663') center top no-repeat;
+  body.front.not-logged-in {
+    background: url('images/flypug.jpg?1400510663') center 96px no-repeat;
   }
 }
 
 .palette-magenta-blue .header-color-row-two {
   border: 0 none;
+}
+
+.palette-magenta-blue #menu-bar.nav ul.menu li a, #menu-bar.nav ul.menu li .palette-magenta-blue a {
+  border: 0 none;
+}
+
+#branding #site-title {
+  display: none;
 }
 
