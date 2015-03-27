@@ -1,0 +1,104 @@
+.boxshadow .palette-magenta-blue .header-color-row-one {
+	background-color: #009F89;
+	color: white;
+}
+
+.palette-magenta-blue .header-color-row-two {
+  background-color: #009F89;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  body.front.not-logged-in {
+    background: url('images/flypug3.jpg?1400510663') center 58px no-repeat;
+  }
+}
+
+.palette-magenta-blue .header-color-row-two {
+  border: 0 none;
+}
+
+.palette-magenta-blue #menu-bar.nav,
+.palette-magenta-blue #menu-bar.nav ul.menu li a, #menu-bar.nav ul.menu li .palette-magenta-blue a {
+  border: 0 none;
+  box-shadow: none;
+}
+
+#branding #site-name {
+  display: none;
+}
+
+.palette-magenta-blue .action-item-primary:hover, .palette-magenta-blue .action-item-small-primary:hover, .palette-magenta-blue .action-item-large-primary:hover, .palette-magenta-blue .commons-sign-up:hover, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a:hover, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a:hover, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a:hover, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a:hover {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.palette-magenta-blue .action-item-primary, .palette-magenta-blue .action-item-small-primary, .palette-magenta-blue .action-item-large-primary, .palette-magenta-blue .commons-sign-up, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+
+@media only screen {
+  .button:hover, button:hover, [type="reset"]:hover, [type="submit"]:hover, [type="button"]:hover, [class*="action-item"]:hover, .commons-login:hover {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+		text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+  }
+    .button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+  }
+}
+
+#main-content-header #page-title {
+  color: white;
+}
+
+body.front.not-logged-in #block-system-main .pane-1 .pane-title,
+body.front .pane-custom.pane-1 {
+  color: white;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+
+.front .panel-pane.pane-custom.pane-1.block {
+  text-align: center;
+  margin-top: 176px;
+}
+.front .panel-pane.pane-block.pane-commons-site-homepage-commons-site-homepage {
+  text-align: center;
+}
+
+.header-color-row-two {
+  min-height: 0.5em;
+}
+
+.palette-magenta-blue .action-item-primary, .palette-magenta-blue .action-item-small-primary, .palette-magenta-blue .action-item-large-primary, .palette-magenta-blue .commons-sign-up, .palette-magenta-blue .pane-commons-groups-commons-groups-create-group a, .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a, .palette-magenta-blue .pane-commons-events-commons-events-create-event-link a, .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.commons-login:hover {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login, .button:link, button:link, [type="reset"]:link, [type="submit"]:link, [type="button"]:link, [class*="action-item"]:link, .commons-login:link, .button:visited, button:visited, [type="reset"]:visited, [type="submit"]:visited, [type="button"]:visited, [class*="action-item"]:visited, .commons-login:visited {
+  color: white;
+}
+
+.button, button, [type="reset"], [type="submit"], [type="button"], [class*="action-item"], .commons-login {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}

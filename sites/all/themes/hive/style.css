@@ -1,3 +1,135 @@
+/* Header */
+
 .boxshadow .palette-magenta-blue .header-color-row-one {
-	background-color: yellow;
+	background-color: #009F89;
+	color: white;
 }
+
+.palette-magenta-blue .header-color-row-two {
+  background-color: #009F89;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  body.front.not-logged-in {
+    background: url('images/flypug3.jpg?1400510663') center 58px no-repeat;
+  }
+}
+
+.palette-magenta-blue .header-color-row-two {
+  border: 0 none;
+}
+
+.palette-magenta-blue #menu-bar.nav,
+.palette-magenta-blue #menu-bar.nav ul.menu li a,
+#menu-bar.nav ul.menu li .palette-magenta-blue a {
+  border: 0 none;
+  box-shadow: none;
+}
+
+#branding #site-name {
+  display: none;
+}
+
+#main-content-header #page-title {
+  color: white;
+}
+
+#logo {
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+
+
+/* Buttons */
+.front.palette-magenta-blue .action-item-primary:hover,
+.front.palette-magenta-blue .action-item-small-primary:hover,
+.front.palette-magenta-blue .action-item-large-primary:hover,
+.front.palette-magenta-blue .commons-sign-up:hover,
+.front.palette-magenta-blue .pane-commons-groups-commons-groups-create-group a:hover,
+.front .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a:hover,
+.front.palette-magenta-blue .pane-commons-events-commons-events-create-event-link a:hover,
+.front .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a:hover {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.front.palette-magenta-blue .action-item-primary,
+.front.palette-magenta-blue .action-item-small-primary,
+.front.palette-magenta-blue .action-item-large-primary,
+.front.palette-magenta-blue .commons-sign-up,
+.front.palette-magenta-blue .pane-commons-groups-commons-groups-create-group a,
+.front .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a,
+.front.palette-magenta-blue .pane-commons-events-commons-events-create-event-link a,
+.front .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  border: 3px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+
+@media only screen {
+  .front .button:hover,
+  .commons-login:hover {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+		text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+  }
+  .front .button,
+  .front .commons-login {
+		border: 3px solid white;
+		background: transparent;
+		color: white;
+		font-weight: bold;
+  }
+}
+
+body.front.not-logged-in #block-system-main .pane-1 .pane-title,
+body.front .pane-custom.pane-1 {
+  color: white;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.front .panel-pane.pane-custom.pane-1.block {
+  text-align: center;
+  margin-top: 176px;
+}
+.front .panel-pane.pane-block.pane-commons-site-homepage-commons-site-homepage {
+  text-align: center;
+}
+
+.header-color-row-two {
+  min-height: 0.5em;
+}
+
+.front.palette-magenta-blue .action-item-primary,
+.front.palette-magenta-blue .action-item-small-primary,
+.front.palette-magenta-blue .action-item-large-primary,
+.front.palette-magenta-blue .commons-sign-up,
+.front.palette-magenta-blue .pane-commons-groups-commons-groups-create-group a,
+.front .pane-commons-groups-commons-groups-create-group .palette-magenta-blue a,
+.front.palette-magenta-blue .pane-commons-events-commons-events-create-event-link a,
+.front .pane-commons-events-commons-events-create-event-link .palette-magenta-blue a {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.front .commons-login:hover {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.front .button,
+.front .commons-login:visited {
+  color: white;
+}
+
+.front .button,
+.front .commons-login {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
