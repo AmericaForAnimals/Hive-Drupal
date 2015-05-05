@@ -65,7 +65,7 @@ function commons_like_strongarm() {
       ),
       'template' => 'commons_like',
       'node_display' => '2',
-      'teaser_display' => FALSE,
+      'teaser_display' => TRUE,
       'comment_display' => '2',
       'node_display_mode' => '1',
       'teaser_display_mode' => '1',
