@@ -133,3 +133,6 @@ body.front .pane-custom.pane-1 {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.view-clone-of-commons-events-upcoming-events.view-display-id-default .form-item-field-geolocation-distance-search-distance {
+  display: none;
+}
